@@ -1,0 +1,22 @@
+
+.header{
+    background-color: #73caf0;
+    .header_content{
+        align-items: center;
+        max-width: 700px;
+        font-family: 'Segoe UI';
+        font-weight: 300;
+        font-size: 50px;
+        color: white;
+        display: flex;
+        span{
+            width: 400px;
+            margin-left: 30px;
+        }
+        img{
+            height: 80px;
+            width: 102px;
+        }
+    }
+    
+}
