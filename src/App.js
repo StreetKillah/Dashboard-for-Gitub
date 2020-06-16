@@ -5,12 +5,6 @@ import Main from './components/Main';
 import Card from './components/Card';
 
 class App extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-
-    }
-  }
 
  
 
