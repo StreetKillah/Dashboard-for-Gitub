@@ -10,18 +10,15 @@
     font-size: 50px;
     
     .container{
+        width: 1200px;
         margin-top: 50px;
         .title_page{
-            height: 200px;
             text-align: center;
-            span{
-                text-align: center;
-            }
-
+            
         }
         .search{
-        margin-top: 80px;
         max-width: 1200px;
+        margin-top: 80px;
         height: 200px;
         display: flex;
         flex-direction: column;
@@ -66,7 +63,7 @@
     .repositories_list{
         max-width: 1200px;
         display: grid;
-        grid-template-columns: 4fr 4fr 3fr;
+        grid-template-columns: 5fr 5fr 4fr;
         grid-template-rows: 3fr 3fr 3fr;
         grid-gap: 2vw;
         #elem{
@@ -77,6 +74,9 @@
                 font-size: 20px;
                 font-weight: 400;
                 text-align: center;
+                #name_elem:nth-child(1){
+                    text-decoration-line: none;
+                }
             }
             #owner{
                 font-size: 18px;
@@ -136,16 +136,26 @@
         
     .paginator{
         margin-bottom: 0;
-        background-color: grey;
         height: 100px;
         display: flex;
         justify-content: center;
         #paginator{
-            color:white;
+            color:gray;
             font-size: 25px;
             font-weight: 400;
-            #page_link{
-                text-decoration-color: white;
+            ol{
+                display: flex;
+                justify-content: space-between;
+                list-style-type: none;
+                li{
+                    width: 20px;
+                }
+                li:hover{
+                    width: 30px;
+                    color: #46527a;
+                    cursor: pointer;
+                    font-weight:500;
+                }
             }
         }
     }
