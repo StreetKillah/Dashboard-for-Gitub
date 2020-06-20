@@ -12,7 +12,22 @@ const App = () => {
   const [currentName, nextName] = useState('');
   const [currentPage, nextPage] = useState(1);
   const [currentRep, nextRep] = useState(0);
-//  const [numberOfPages, setNumberOfPages] = useState(1);
+
+  //для обновления страницы:
+  useEffect(() => {
+    const input_field = localStorage.getItem('my_input');
+    if(input_field){
+      document.getElementById('input_user').value = input_field;
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('my_input', currentName);
+  });
+
+
+
+
 
   useEffect(() => {
   fetch(endPoint)
@@ -20,7 +35,6 @@ const App = () => {
     return response.json();
   })
   .then((data) => {
-      //setNumberOfPages(parseInt(data.items.length/10));
       changeRepositories(data.items);
       console.log(data.items);
       console.log(currentPage)
@@ -43,8 +57,9 @@ var pageChanger = (event) => {
   if(currentName != ''){
     setEndPoint(`https://api.github.com/search/repositories?q=${currentName}+in:name&sort=stars&order=desc&page=${currentPage}&per_page=10`);
   }
-  event.target.style.color="#46527a";
-  event.target.style.fontWeight=500;
+  
+  // event.target.style.color="#46527a";
+  // event.target.style.fontWeight=500;
 }
 
 var getId = (event) => {
